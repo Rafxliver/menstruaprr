@@ -1,0 +1,180 @@
+/* Definição de cores e variáveis */
+:root {
+    --cor-principal: #F1A7B5;       /* Rosa pastel */
+    --cor-secundaria: #ffeded;      /* Rosa claro */
+    --cor-terciaria: #F5C1C7;       /* Rosa claro pastel */
+    --cor-quarta: #cdcda4;          /* Verde pastel escuro */
+    --cor-fundo: #4E2C36;           /* Marrom escuro mais suave para melhor contraste */
+    --cor-texto-escuro: #5B4A46;    /* Texto escuro mais suave */
+    --cor-texto-claro: #fff;       /* Cor de texto clara */
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Estilo do menu */
+.menu {
+    background-color: var(--cor-principal);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.menu-item-container {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    position: relative;
+    margin: 0 30px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.menu-item a:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-fundo);
+    transform: translateY(-5px);
+}
+
+/* Estilo do submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-secundaria);
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.submenu li {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.submenu li a {
+    color: var(--cor-texto-escuro);
+    font-size: 1rem;
+    padding: 8px 15px;
+    text-transform: none;
+    border-radius: 5px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-fundo);
+}
+
+/* Exibir submenu quando o item for hover */
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Estilo das seções - Centralização e visibilidade */
+.content-section {
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto; /* Centraliza as seções */
+    max-width: 900px; /* Limita o tamanho da largura da seção */
+    width: 100%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--cor-quarta);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0 auto; /* Centraliza o texto */
+    max-width: 800px; /* Limita a largura do texto */
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-terciaria);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--cor-fundo);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .menu-item-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-item {
+        margin: 15px 0;
+    }
+
+    .menu-item a {
+        font-size: 1.1rem;
+        padding: 15px 25px;
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .content-section {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}
